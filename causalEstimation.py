@@ -13,8 +13,8 @@ from sklearn.linear_model import LinearRegression
 
 def model():
     model = Sequential()
-    model.add(Dense(8, input_dim=2, activation='linear'))
-    model.add(Dense(8, activation='relu'))
+    model.add(Dense(8, input_dim=2, activation='relu'))
+    model.add(Dense(4, activation='relu'))
     model.add(Dense(1, activation='linear'))
     model.compile(loss='mean_squared_error', optimizer = 'adam')
     return model

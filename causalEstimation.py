@@ -19,9 +19,12 @@ def model():
     model.compile(loss='mean_squared_error', optimizer = 'adam')
     return model
 
+#a-->b 
+#a-->c
+#b-->c    
 def generate_data(n=1000, seed=0, beta1=0.98, alpha1=0.4, alpha2=0.3):
     np.random.seed(seed)
-    a = np.random.normal(65, 5, n)
+    a = np.random.normal(65, 5, n) 
     b = a / 18 + np.random.normal(size=n)
     c = beta1 * b + 2 * a + np.random.normal(size=n)
     
@@ -42,8 +45,8 @@ if __name__ == '__main__':
     ate1 = estimate(df[['b', 'a']], df['c'])
     ate2 = estimate(df[['b', 'a']], df['c'], model = LinearRegression())
     print('# Adjustment Formula Estimates #')
-    print('ATE estimate:\t\t\t\t\t\t\t', ate1)
-    print('ATE estimate:\t\t\t\t\t\t\t', ate2)
+    print('ATE estimate CSM1:\t\t\t\t\t\t\t', ate1)
+    print('ATE estimate CSM2:\t\t\t\t\t\t\t', ate2)
 
 
 
